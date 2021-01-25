@@ -9,6 +9,7 @@
         <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
+                <script src="js/PapaParse-5.0.2/papaparse.min.js"></script>
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
@@ -261,5 +262,23 @@
         <script src="assets/mail/contact_me.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
+        <script type="text/javascript">
+            
+Papa.parse('assets/csv/test.csv', {
+        download: true,
+        encoding: "GBK",
+        header: true,
+        complete: function(results) {
+            var data = results.data, html;
+            console.log("papaparse completed, result:", data);
+            for(var i = 1, _l = data.length-1; i < _l; i++) {
+                var item = data[i];
+                html += '<tr><td>'+item[0].substring(1)+'</td><td>'+item[1].substring(1)+'</td><td>'+item[2].substring(1)+'</td><td>'+item[3].substring(1)+'</td></tr>';
+            }
+            $('#table tbody').append(html);
+        }
+    });
+
+        </script>
     </body>
 </html>

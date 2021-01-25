@@ -287,7 +287,7 @@ Papa.parse('https://miglee.github.io/aquasports/assets/csv/test.txt', {
         // encoding: "GBK",
         header: true,
         complete: function(results) {
-            var data = results.data,name, html;
+            var data = results.data, name, img;
             console.log("papaparse completed, result:", data);
             for(var i = 0, _l = data.length-1; i < _l; i++) {
                 console.log("line 293 is fine");

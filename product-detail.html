@@ -264,9 +264,10 @@
         <script src="js/scripts.js"></script>
         <script type="text/javascript">
             
-Papa.parse('assets/csv/test.csv', {
+Papa.parse('https://miglee.github.io/aquasports/assets/csv/test.csv', {
         download: true,
-        encoding: "GBK",
+        encoding: "ISO-8859-1",
+        // encoding: "GBK",
         header: true,
         complete: function(results) {
             var data = results.data, html;

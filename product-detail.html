@@ -291,11 +291,12 @@ Papa.parse('https://miglee.github.io/aquasports/assets/csv/test.txt', {
             console.log("papaparse completed, result:", data);
             for(var i = 0, _l = data.length-1; i < _l; i++) {
                 var item = data[i];
-                    if (item.product_name == product){
+                    if (item.product_url == product){
+                    var product_url = item.product_url;
                     var name = item.product_name;
                     var large_img = item.large_img;
                     var material_1 = item.material_1;
-                    console.log("get product name:", name, "get large_img:", large_img);
+                    console.log("get product_url:", product_url, "get large_img:", large_img);
 
                     $('#product_name').append(name);
                     $('#large_img').attr('src','assets/img/'+large_img);

@@ -291,8 +291,9 @@ Papa.parse('https://miglee.github.io/aquasports/assets/csv/test.txt', {
             console.log("papaparse completed, result:", data);
             for(var i = 0, _l = data.length-1; i < _l; i++) {
                 var item = data[i];
+                var product_url = item.product_url;
                     if (item.product_url == product){
-                    var product_url = item.product_url;
+        
                     var name = item.product_name;
                     var large_img = item.large_img;
                     var material_1 = item.material_1;

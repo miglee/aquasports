@@ -292,6 +292,7 @@ Papa.parse('https://miglee.github.io/aquasports/assets/csv/test.txt', {
             for(var i = 0, _l = data.length-1; i < _l; i++) {
                 console.log("line 293 is fine");
                 var item = data[i];
+                console.log("item.product_url:",item.product_url);
                 var product_url = item.product_url;
                 console.log("product_url:",product_url, "link_url:",link_url);
                     if (product_url == link_url){

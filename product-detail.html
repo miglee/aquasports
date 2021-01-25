@@ -155,7 +155,7 @@
                             <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
                         </span> -->
                         <h5 class="my-3">Feature</h5>
-                        <p class="text-muted">This is a sample description. This is a long description of product details. We'll put text here. This is a sample description. This is a long description of product details. We'll put text here. This is a sample description. This is a long description of product details. We'll put text here.</p>
+                        <p class="text-muted" id="material_1">This is a sample description. This is a long description of product details. We'll put text here. This is a sample description. This is a long description of product details. We'll put text here. This is a sample description. This is a long description of product details. We'll put text here.</p>
                     </div>
                     <div class="col-md-12">
 <!--                         <span class="fa-stack fa-4x">
@@ -283,13 +283,15 @@ Papa.parse('https://miglee.github.io/aquasports/assets/csv/test.txt', {
             console.log("papaparse completed, result:", data);
             for(var i = 0, _l = data.length-1; i < _l; i++) {
                 var item = data[i];
-                    if (item.product_name == "SMB2, open bottom"){
+                    if (item.product_name == "SMB1, open bottom"){
                     var name = item.product_name;
                     var large_img = item.large_img;
+                    var material_1 = item.material_1;
 
                     $('#product_name').append(name);
                     $('#large_img').attr('src','assets/img/'+large_img);
-                    console.log(large_img);
+                     $('#material_1').append(material_1);
+                    console.log(material_1);
                     // $("#my_image").attr("src","second.jpg");
                     }
             //     html += '<tr><td>'+item.product_name+'</td><td>'+item.product_name+'</td><td>'+item.product_name+'</td><td>'+item.product_name+'</td></tr>';

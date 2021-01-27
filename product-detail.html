@@ -320,15 +320,17 @@ Papa.parse('https://miglee.github.io/aquasports/assets/csv/test1.txt', {
                     var rawsize = item.size;
                     var rawnote = item.note;
                     console.log("get product_url:", product_url, "get large_img:", large_img);
-                    console.log("get feature:", feature);
-                    console.log("get empty note", note);
+                    console.log("get feature:", rawfeature);
+                    console.log("get empty note", rawnote);
 
 
                     // add <br/> after each line of str
                     var array_raw_material = rawmaterial.split('/n');
+                    console.log("array_raw_material:", array_raw_material);
                     var material = "";
                     for (var i = 0, _l = array_raw_material.length-1; i < _l; i++){
                         material += array_raw_material[i]+"<br/>";
+                        console.log("for loop: i=", i," material:",material );
                     }
 
 

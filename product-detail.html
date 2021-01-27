@@ -321,6 +321,7 @@ Papa.parse('https://miglee.github.io/aquasports/assets/csv/test1.txt', {
                     var note = item.note;
                     console.log("get product_url:", product_url, "get large_img:", large_img);
                     console.log("get feature:", feature);
+                    console.log("get empty note", note);
 
                     $('#product_name').append(name);
                     $('#large_img').attr('src','assets/img/'+large_img);

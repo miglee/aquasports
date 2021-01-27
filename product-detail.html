@@ -68,10 +68,10 @@
 
 
 
-        <h4 class="section-heading text-uppercase text-left" id="product_name">Basic BCD</h4>
+        <h4 class="section-heading text-uppercase text-left" id="product_name">Product Name</h4>
 <!--         <p>Recreational,  </p> -->
         <div class="text-left">
-                <p id="subtitle" style="line-height: 1.2rem">SUbtitle</p>
+                <p id="subtitle" style="line-height: 1.2rem">Subtitle</p>
                 <p id="short_description" class="mb-4" style="line-height: 1.2rem;">Short description - More description or details about the product: Price, Minimum order quantity, Shipping, etc.</p>
 <!--                 <p style="line-height: 1.2rem">Description</p> -->
         </div>
@@ -155,7 +155,7 @@
                             <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
                         </span> -->
                         <h5 class="my-3">Material</h5>
-                        <p class="text-muted" id="material">This is a sample description. This is a long description of product details. We'll put text here. This is a sample description. This is a long description of product details. We'll put text here. This is a sample description. This is a long description of product details. We'll put text here.</p>
+                        <p class="text-muted" id="material">n/a</p>
                     </div>
                     <div class="col-md-12">
 <!--                         <span class="fa-stack fa-4x">
@@ -163,7 +163,7 @@
                             <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
                         </span> -->
                         <h5 class="my-3">Feature</h5>
-                        <p id="feature"class="text-muted">This is a sample description. This is a long description of product details. We'll put text here. This is a sample description. This is a long description of product details. We'll put text here. This is a sample description. This is a long description of product details. We'll put text here.</p>
+                        <p id="feature"class="text-muted">n/a</p>
                     </div>
                     <div class="col-md-12">
 <!--                         <span class="fa-stack fa-4x">
@@ -171,7 +171,7 @@
                             <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
                         </span> -->
                         <h5 class="my-3">Sizes</h5>
-                        <p id="size"class="text-muted">This is a sample description. This is a long description of product details. We'll put text here. This is a sample description. This is a long description of product details. We'll put text here. This is a sample description. This is a long description of product details. We'll put text here.</p>
+                        <p id="size"class="text-muted">n/a</p>
                     </div>
 
                     <div class="col-md-12">
@@ -180,7 +180,7 @@
                             <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
                         </span> -->
                         <h5 class="my-3">Notes</h5>
-                        <p id="note"class="text-muted">This is a sample description. This is a long description of product details. We'll put text here. This is a sample description. This is a long description of product details. We'll put text here. This is a sample description. This is a long description of product details. We'll put text here.</p>
+                        <p id="note"class="text-muted">n/a</p>
                     </div>
                 </div>
             </div>
@@ -322,15 +322,20 @@ Papa.parse('https://miglee.github.io/aquasports/assets/csv/test1.txt', {
                     console.log("get product_url:", product_url, "get large_img:", large_img);
                     console.log("get feature:", feature);
                     console.log("get empty note", note);
-                    if (note=="") {console.log("note==")};
+
 
                     $('#product_name').html(name);
                     $('#large_img').attr('src','assets/img/'+large_img);
-                    $('#subtitle').html(subtitle);
-                    $('#short_description').html(short_description);
-                    $('#small_img_1').attr('src','assets/img/'+small_img_1);
-                    $('#small_img_2').attr('src','assets/img/'+small_img_2);
-                    $('#small_img_3').attr('src','assets/img/'+small_img_3);
+                    if (subtitle!=="") {$('#subtitle').html(subtitle);}
+                    else{$('#subtitle').hide};
+                    if (short_description!=="") {$('#short_description').html(short_description);}
+                    else{$('#short_description').hide};
+                    if (small_img_1!=="") {$('#small_img_1').attr('src','assets/img/'+small_img_1);}
+                    else{$('#small_img_1').hide};
+                    if (small_img_2!=="") {$('#small_img_2').attr('src','assets/img/'+small_img_2);};
+                    else{$('#small_img_2').hide};
+                    if (small_img_3!=="") {$('#small_img_2').attr('src','assets/img/'+small_img_3);};
+                    else{$('#small_img_3').hide};
                     $('#material').html(material);
                     $('#feature').html(feature);
                     $('#size').html(size);

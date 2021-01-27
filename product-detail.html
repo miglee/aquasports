@@ -291,6 +291,7 @@
 
             // function: add <br/> after each line of str
             function addBR(raw){
+                if(raw!==""){
                     array_raw = raw.split('\n');
                     console.log("array_raw:", array_raw);
                     var output = "";
@@ -299,9 +300,10 @@
                         console.log("for loop: i=", i," output:",output );
                     }
                     return output;
-
-
-            }
+                }
+                else{return "n/a"      
+                    }
+                }
 
 
 
@@ -315,14 +317,13 @@ Papa.parse('https://miglee.github.io/aquasports/assets/csv/test1.txt', {
             var data = results.data, name, img;
             console.log("papaparse completed, result:", data);
             for(var i = 0, _l = data.length-1; i < _l; i++) {
-                console.log("line 293 is fine");
                 var item = data[i];
-                console.log("item.product_url:",item.product_url);
+                // console.log("item.product_url:",item.product_url);
                 var product_url = item.product_url;
-                console.log("product_url:",product_url, "link_url:",link_url);
+                // console.log("product_url:",product_url, "link_url:",link_url);
                     if (product_url == link_url){
 
-                    console.log("line 299 is fine");
+                    // console.log("line 299 is fine");
         
                     var name = item.product_name;
                     var large_img = item.large_img;
@@ -335,9 +336,9 @@ Papa.parse('https://miglee.github.io/aquasports/assets/csv/test1.txt', {
                     var rawfeature = item.feature;
                     var rawsize = item.size;
                     var rawnote = item.note;
-                    console.log("get product_url:", product_url, "get large_img:", large_img);
-                    console.log("get feature:", rawfeature);
-                    console.log("get empty note", rawnote);
+                    // console.log("get product_url:", product_url, "get large_img:", large_img);
+                    // console.log("get feature:", rawfeature);
+                    // console.log("get empty note", rawnote);
 
                     var material = addBR(rawmaterial);
                     var feature = addBR(rawfeature);
@@ -358,7 +359,7 @@ Papa.parse('https://miglee.github.io/aquasports/assets/csv/test1.txt', {
                     if (subtitle!=="") {$('#subtitle').html(subtitle);}
                     else{$('#subtitle').hide};
                     if (short_description!=="") {$('#short_description').html(short_description);}
-                    else{$('#short_description').hide;console.log("#short_description hided");};
+                    else{$('#short_description').hide;console.log("short_description hided");};
                     if (small_img_1!=="") {$('#small_img_1').attr('src','assets/img/'+small_img_1);}
                     else{$('#small_img_1').hide};
                     if (small_img_2!=="") {$('#small_img_2').attr('src','assets/img/'+small_img_2);}

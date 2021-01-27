@@ -341,8 +341,8 @@ Papa.parse('https://miglee.github.io/aquasports/assets/csv/test1.txt', {
 
                     var material = addBR(rawmaterial);
                     var feature = addBR(rawfeature);
-                    var material = addBR(rawsize);
-                    var material = addBR(rawnote);
+                    var size = addBR(rawsize);
+                    var note = addBR(rawnote);
                     // add <br/> after each line of str
                     // var array_raw_material = rawmaterial.split('\n');
                     // console.log("array_raw_material:", array_raw_material);
@@ -368,7 +368,7 @@ Papa.parse('https://miglee.github.io/aquasports/assets/csv/test1.txt', {
                     $('#material').html(material);
                     $('#feature').html(feature);
                     $('#size').html(size);
-                    $('#note').html(mote);
+                    $('#note').html(note);
                     break;
 
                     // $("#my_image").attr("src","second.jpg");

@@ -117,9 +117,9 @@
                                 <div class="portfolio-hover">
   <!--                                   <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div> -->
                                 </div>
-                                <img class="img-fluid" src="assets/img/portfolio/03-thumbnail.jpg" alt="" />
+                                <img id="small_img_3" class="img-fluid" src="assets/img/portfolio/03-thumbnail.jpg" alt="" />
                             </a>
-                            <div id="small_img_3" class="portfolio-caption">
+                            <div  class="portfolio-caption">
 <!--                                 <div class="portfolio-caption-heading">Other 3</div> -->
 <!--                                 <div class="portfolio-caption-subheading text-muted small">Other 3</div> -->
                             </div>
@@ -324,16 +324,16 @@ Papa.parse('https://miglee.github.io/aquasports/assets/csv/test1.txt', {
                     console.log("get empty note", note);
                     if (note=="") {console.log("note==")};
 
-                    $('#product_name').text(name);
+                    $('#product_name').html(name);
                     $('#large_img').attr('src','assets/img/'+large_img);
-                    $('#subtitle').text(subtitle);
-                    $('#short_description').append(short_description);
+                    $('#subtitle').html(subtitle);
+                    $('#short_description').html(short_description);
                     $('#small_img_1').attr('src','assets/img/'+small_img_1);
                     $('#small_img_2').attr('src','assets/img/'+small_img_2);
                     $('#small_img_3').attr('src','assets/img/'+small_img_3);
-                    $('#material').text(material);
-                    $('#feature').text(feature);
-                    $('#note').text(mote);
+                    $('#material').html(material);
+                    $('#feature').html(feature);
+                    $('#note').html(mote);
 
                     // $("#my_image").attr("src","second.jpg");
                     }

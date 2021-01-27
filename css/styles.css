@@ -375,7 +375,7 @@ h1, .h1 {
 }
 
 h2, .h2 {
-  font-size: 2rem;
+  font-size: 2.25rem;
 }
 
 h3, .h3 {
@@ -5836,10 +5836,28 @@ a.close.disabled {
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
   transition: transform 0.6s ease-in-out;
+
 }
 
-.carousel-item img {
- max-height:500px;
+
+
+.carousel-item img{
+  object-fit: contain;
+  max-height:100%;
+  max-width:100%;
+  vertical-align: bottom;
+}
+
+.carousel-item {
+  object-fit: scale-down;
+  height:400px;
+
+}
+
+@media(min-width: 768px){
+  .carousel-item {
+  height:600px;
+}
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -10007,7 +10025,7 @@ p {
   padding: 4rem 1rem;
 }
 .page-section h2.section-heading {
-  font-size: 2.5rem;
+  font-size: 2rem;
   margin-top: 0;
   margin-bottom: 1rem;
 }
@@ -10180,6 +10198,7 @@ header.masthead .masthead-heading {
   max-width: 25rem;
   margin-left: auto;
   margin-right: auto;
+  height:30vh;
 }
 #portfolio .portfolio-item .portfolio-link {
   position: relative;
@@ -10210,7 +10229,7 @@ header.masthead .masthead-heading {
 /*  background-color: #fff;*/
 }
 #portfolio .portfolio-item .portfolio-caption .portfolio-caption-heading {
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-weight: 700;
   margin-bottom: 0;
@@ -10259,10 +10278,10 @@ header.masthead .masthead-heading {
 .portfolio-modal .close-modal:hover {
   opacity: 0.3;
 }
-.portfolio-link img{
-  max-height:300px;
-}
 
+.product-card-img{
+  max-height:30vh;
+}
 .timeline {
   position: relative;
   padding: 0;
@@ -10358,6 +10377,8 @@ header.masthead .masthead-heading {
 .timeline .timeline-body > p {
   margin-bottom: 0;
 }
+
+
 
 @media (min-width: 768px) {
   .timeline:before {
@@ -10503,4 +10524,15 @@ section#contact form#contactForm :-ms-input-placeholder {
   font-size: 0.9rem;
   background-color: #f0f0f0;
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.product-card-img-div{
+  height:30vh;
+}
+
+.product-card-img-div img{
+  object-fit:contain;
+  max-width:100%;
+  max-height:100%;
+/*  margin:auto 0;*/
 }

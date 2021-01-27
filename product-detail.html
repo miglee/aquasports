@@ -290,17 +290,18 @@
           console.log("try to retreive the last part of url after=:", link_url);
 
 
-            // function: add <br/> after each line of str
+            // function: add <br/> after each line of str & make into a list without deco
             function addBR(raw){
                 if(raw!==""){
                     array_raw = raw.split('\n');
                     console.log("array_raw:", array_raw);
                     var output = "";
                     for (var i = 0, _l = array_raw.length-1; i < _l; i++){
-                        output += array_raw[i]+"<br/>";
+                        var temp_li = "<li>"+array_raw[i]+"</li>";
+                        output += temp_li;
                         console.log("for loop: i=", i," output:",output );
                     }
-                    return output;
+                    return "<ul>"+output+"</ul>";
                 }
                 else{   console.log("return n/a for emptyraw data");
                         return "n/a"      

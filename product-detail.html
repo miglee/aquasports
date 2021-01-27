@@ -369,7 +369,9 @@ Papa.parse('https://miglee.github.io/aquasports/assets/csv/test1.txt', {
                     else{$('#small_img_2').hide()};
                     if (small_img_3!=="") {$('#small_img_3').attr('src','assets/img/'+small_img_3);}
                     else{$('#small_img_3').hide()};
-                    $('#material').html(material);
+                    // $('#material').html(material);
+                    if (material!=="") {$('#material').html(material);}
+                    else{$('#material').hide()};
                     $('#feature').html(feature);
                     // $('#size').html(size);
                     if (size!=="") {$('#size').html(size);}

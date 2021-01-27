@@ -57,7 +57,7 @@
             <div class="container ">
         <div class="row align-items-center" style="margin-top:100px;" >
       <div class="col-12 col-sm-5"  >
-        <img id="large_img" class="img-fluid rounded mb-2 mb-lg-0 " style="max-height:400px;" src="assets/img/Standard Jacket 1.jpg" alt="">
+        <img id="large_img" class="img-fluid rounded mb-2 mb-lg-0 " style="max-height:400px;" src="assets/img/placeholder.jpg" alt="">
 
 
 
@@ -103,7 +103,7 @@
                                 <div class="portfolio-hover">
 <!--                                     <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div> -->
                                 </div>
-                                <img id="small_img_2"class="img-fluid" src="assets/img/pplaceholder.jpg" alt="" />
+                                <img id="small_img_2"class="img-fluid" src="assets/img/placeholder.jpg" alt="" />
                             </a>
                             <div class="portfolio-caption">
 <!--                                 <div class="portfolio-caption-heading">Other 2</div> -->
@@ -315,13 +315,21 @@ Papa.parse('https://miglee.github.io/aquasports/assets/csv/test1.txt', {
                     var small_img_1 = item.small_img_1;
                     var small_img_2 = item.small_img_2;
                     var small_img_3 = item.small_img_3;
-                    var material = item.material;
-                    var feature = item.feature;
-                    var size = item.size;
-                    var note = item.note;
+                    var rawmaterial = item.material;
+                    var rawfeature = item.feature;
+                    var rawsize = item.size;
+                    var rawnote = item.note;
                     console.log("get product_url:", product_url, "get large_img:", large_img);
                     console.log("get feature:", feature);
                     console.log("get empty note", note);
+
+
+                    // add <br/> after each line of str
+                    var array_raw_material = rawmaterial.split('/n');
+                    var material = "";
+                    for (var i = 0, _l = array_raw_material.length-1; i < _l; i++){
+                        material += array_raw_material[i]+"<br/>";
+                    }
 
 
                     $('#product_name').html(name);
@@ -340,6 +348,7 @@ Papa.parse('https://miglee.github.io/aquasports/assets/csv/test1.txt', {
                     $('#feature').html(feature);
                     $('#size').html(size);
                     $('#note').html(mote);
+                    break;
 
                     // $("#my_image").attr("src","second.jpg");
                     }

@@ -310,12 +310,27 @@ Papa.parse('https://miglee.github.io/aquasports/assets/csv/test1.txt', {
         
                     var name = item.product_name;
                     var large_img = item.large_img;
-                    var material_1 = item.material_1;
+                    var subtitle = item.subtitle;
+                    var short_description = item.short_description;
+                    var small_img_1 = item.small_img_1;
+                    var small_img_2 = item.small_img_2;
+                    var small_img_3 = item.small_img_3;
+                    var material = item.material;
+                    var feature = item.feature;
+                    var size = item.size;
+                    var note = item.note;
                     console.log("get product_url:", product_url, "get large_img:", large_img);
 
                     $('#product_name').append(name);
                     $('#large_img').attr('src','assets/img/'+large_img);
-                    $('#material_1').append(material_1);
+                    $('#subtitle').append(subtitle);
+                    $('#short_description').append(short_description);
+                    $('#small_img_1').attr('src','assets/img/'+small_img_1);
+                    $('#small_img_2').attr('src','assets/img/'+small_img_2);
+                    $('#small_img_3').attr('src','assets/img/'+small_img_3);
+                    $('#material').append(material);
+                    $('#feature').append(feature);
+                    $('#note').append(mote);
 
                     // $("#my_image").attr("src","second.jpg");
                     }

@@ -170,7 +170,7 @@
                             <i class="fas fa-circle fa-stack-2x " style="color:#cfcfcf"></i>
                             <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
                         </span> -->
-                        <h5 class="my-3">Sizes</h5>
+                        <!-- <h5 class="my-3">Sizes/ Lift</h5> -->
                         <p id="size"class="text-muted">n/a</p>
                     </div>
 
@@ -282,6 +282,7 @@
         <script src="js/scripts.js"></script>
         <script type="text/javascript">
             
+        
 
           // Get URL
           var url = window.location.href;
@@ -369,7 +370,9 @@ Papa.parse('https://miglee.github.io/aquasports/assets/csv/test1.txt', {
                     else{$('#small_img_3').hide()};
                     $('#material').html(material);
                     $('#feature').html(feature);
-                    $('#size').html(size);
+                    // $('#size').html(size);
+                    if (size!=="") {$('#size').html(size);}
+                    else{$('#size').hide()};
                     $('#note').html(note);
                     console.log("found the product!");
                     break;

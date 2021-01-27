@@ -325,7 +325,7 @@ Papa.parse('https://miglee.github.io/aquasports/assets/csv/test1.txt', {
 
 
                     // add <br/> after each line of str
-                    var array_raw_material = rawmaterial.split('/n');
+                    var array_raw_material = rawmaterial.split('\n');
                     console.log("array_raw_material:", array_raw_material);
                     var material = "";
                     for (var i = 0, _l = array_raw_material.length-1; i < _l; i++){
